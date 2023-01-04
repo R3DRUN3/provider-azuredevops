@@ -25,8 +25,8 @@ const (
 	errTrackUsage           = "cannot track ProviderConfig usage"
 	errExtractCredentials   = "cannot extract credentials"
 	errUnmarshalCredentials = "cannot unmarshal azuredevops credentials as JSON"
-	keyOrgServiceURL        = "azdevops_org_url"
-	keyPersonalAccessToken  = "pat"
+	keyOrgServiceURL        = "org_service_url"
+	keyPersonalAccessToken  = "personal_access_token"
 )
 
 // TerraformSetupBuilder builds Terraform a terraform.SetupFn function which

@@ -1,0 +1,10 @@
+apiVersion: project.azuredevops.upbound.io/v1alpha1
+kind: Project
+metadata:
+  name: hello-crossplane-project
+spec:
+  forProvider:
+    description: "Managed with Crossplane AzureDevops Provider (generated with Upjet)"
+    visibility: private
+  providerConfigRef:
+    name: default
