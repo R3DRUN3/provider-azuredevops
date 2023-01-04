@@ -5,18 +5,18 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.8.0
   creationTimestamp: null
-  name: resources.null.azuredevops.upbound.io
+  name: projects.project.azuredevops.upbound.io
 spec:
-  group: null.azuredevops.upbound.io
+  group: project.azuredevops.upbound.io
   names:
     categories:
     - crossplane
     - managed
     - azuredevops
-    kind: Resource
-    listKind: ResourceList
-    plural: resources
-    singular: resource
+    kind: Project
+    listKind: ProjectList
+    plural: projects
+    singular: project
   scope: Cluster
   versions:
   - additionalPrinterColumns:
@@ -35,7 +35,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: Resource is the Schema for the Resources API. <no value>
+        description: Project is the Schema for the Projects API. <no value>
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -50,7 +50,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: ResourceSpec defines the desired state of Resource
+            description: ProjectSpec defines the desired state of Project
             properties:
               deletionPolicy:
                 default: Delete
@@ -63,13 +63,18 @@ spec:
                 type: string
               forProvider:
                 properties:
-                  triggers:
+                  description:
+                    type: string
+                  features:
                     additionalProperties:
                       type: string
-                    description: A map of arbitrary strings that, when changed, will
-                      force the null resource to be replaced, re-running any associated
-                      provisioners.
                     type: object
+                  versionControl:
+                    type: string
+                  visibility:
+                    type: string
+                  workItemTemplate:
+                    type: string
                 type: object
               providerConfigRef:
                 default:
@@ -243,11 +248,13 @@ spec:
             - forProvider
             type: object
           status:
-            description: ResourceStatus defines the observed state of Resource.
+            description: ProjectStatus defines the observed state of Project.
             properties:
               atProvider:
                 properties:
                   id:
+                    type: string
+                  processTemplateId:
                     type: string
                 type: object
               conditions:

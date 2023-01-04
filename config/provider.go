@@ -10,7 +10,7 @@ import (
 
 	ujconfig "github.com/upbound/upjet/pkg/config"
 
-	"github.com/r3drun3/provider-azuredevops/config/null"
+	"github.com/r3drun3/provider-azuredevops/config/project"
 )
 
 const (
@@ -34,7 +34,7 @@ func GetProvider() *ujconfig.Provider {
 
 	for _, configure := range []func(provider *ujconfig.Provider){
 		// add custom config functions
-		null.Configure,
+		project.Configure,
 	} {
 		configure(pc)
 	}
