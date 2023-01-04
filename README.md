@@ -7,6 +7,11 @@
 
 
 <br/>
+<br/>
+
+![CI](https://github.com/r3drun3/provider-azuredevops/actions/workflows/ci.yml/badge.svg)
+
+<br/>
 
 `provider-azuredevops` is a [Crossplane](https://crossplane.io/) provider that
 is built using [Upjet](https://github.com/upbound/upjet) code
