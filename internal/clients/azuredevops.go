@@ -15,7 +15,7 @@ import (
 
 	"github.com/upbound/upjet/pkg/terraform"
 
-	"github.com/upbound/upjet-provider-template/apis/v1beta1"
+	"github.com/r3drun3/provider-azuredevops/apis/v1beta1"
 )
 
 const (
@@ -24,7 +24,9 @@ const (
 	errGetProviderConfig    = "cannot get referenced ProviderConfig"
 	errTrackUsage           = "cannot track ProviderConfig usage"
 	errExtractCredentials   = "cannot extract credentials"
-	errUnmarshalCredentials = "cannot unmarshal template credentials as JSON"
+	errUnmarshalCredentials = "cannot unmarshal azuredevops credentials as JSON"
+	keyOrgServiceURL        = "azdevops_org_url"
+	keyPersonalAccessToken  = "pat"
 )
 
 // TerraformSetupBuilder builds Terraform a terraform.SetupFn function which
@@ -62,11 +64,14 @@ func TerraformSetupBuilder(version, providerSource, providerVersion string) terr
 			return ps, errors.Wrap(err, errUnmarshalCredentials)
 		}
 
-		// Set credentials in Terraform provider configuration.
-		/*ps.Configuration = map[string]any{
-			"username": creds["username"],
-			"password": creds["password"],
-		}*/
+		// set provider configuration
+		ps.Configuration = map[string]any{}
+		if v, ok := creds[keyOrgServiceURL]; ok {
+			ps.Configuration[keyOrgServiceURL] = v
+		}
+		if v, ok := creds[keyPersonalAccessToken]; ok {
+			ps.Configuration[keyPersonalAccessToken] = v
+		}
 		return ps, nil
 	}
 }
