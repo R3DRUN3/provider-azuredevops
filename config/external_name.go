@@ -11,6 +11,8 @@ import "github.com/upbound/upjet/pkg/config"
 var ExternalNameConfigs = map[string]config.ExternalName{
 	// Name is a parameter and it is also used to import the resource.
 	"azuredevops_project": config.NameAsIdentifier,
+
+	"azuredevops_git_repository": config.NameAsIdentifier,
 }
 
 // ExternalNameConfigurations applies all external name configs listed in the

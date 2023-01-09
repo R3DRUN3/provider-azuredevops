@@ -1,0 +1,12 @@
+apiVersion: branch.github.upbound.io/v1alpha1
+kind: Branch
+metadata:
+  name: hello-crossplane-repository
+spec:
+  forProvider:
+    project_idRef:
+      name: hello-crossplane-project
+    initialization:
+      init_type: Uninitialized
+  providerConfigRef:
+    name: default
