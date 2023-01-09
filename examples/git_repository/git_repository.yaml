@@ -1,5 +1,5 @@
-apiVersion: branch.github.upbound.io/v1alpha1
-kind: Branch
+apiVersion: git_repository.azuredevops.upbound.io/v1alpha1
+kind: Git_repository
 metadata:
   name: hello-crossplane-repository
 spec:
