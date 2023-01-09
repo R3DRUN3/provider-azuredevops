@@ -70,7 +70,7 @@ make build
 ## Local development and demo
 clone this repo:  
 ```console
-git clone https://github.com/R3DRUN3/provider-azuredevops.git && cd provider-azure
+git clone https://github.com/R3DRUN3/provider-azuredevops.git && cd provider-azuredevops
 ```
 
 <br/>
@@ -86,12 +86,6 @@ Apply Custom Resource Definitions:
 kubectl apply -f package/crds
 ```
 
-<br/>
-
-Run the provider:  
-```console
-make run
-```
 <br/>
 
 Under `examples/providerconfig` create a kubernetes secrets with your azuredevops org url and access token:  
@@ -111,7 +105,18 @@ stringData:
     }
 EOF
 ```
+<br/>
 
+Run the provider:  
+```console
+make run
+```
+<br/>
+
+*Note*: if you see error when launching the `make` command, try to run the following command first:  
+```console
+git rm --cached build && git submodule add https://github.com/upbound/build build
+```
 <br/>
 
 Now open a new terminal and apply all the required resources:  
