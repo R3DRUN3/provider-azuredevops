@@ -1,5 +1,5 @@
-apiVersion: git_repository.azuredevops.upbound.io/v1alpha1
-kind: Git_repository
+apiVersion: git-repository.azuredevops.upbound.io/v1alpha1
+kind: Repository
 metadata:
   name: hello-crossplane-repository
 spec:

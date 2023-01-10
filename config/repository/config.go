@@ -1,4 +1,4 @@
-package git_repository
+package repository
 
 import "github.com/upbound/upjet/pkg/config"
 

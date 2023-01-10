@@ -81,6 +81,12 @@ kind create cluster --config ./k8s-local/kind-config.yml
 ```
 <br/>
 
+Now we can generate our Upjet Provider:  
+```console
+make generate
+```
+<br/>
+
 Apply Custom Resource Definitions:  
 ```console
 kubectl apply -f package/crds

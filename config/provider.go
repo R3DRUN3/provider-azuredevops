@@ -10,8 +10,8 @@ import (
 
 	ujconfig "github.com/upbound/upjet/pkg/config"
 
-	"github.com/r3drun3/provider-azuredevops/config/git_repository"
 	"github.com/r3drun3/provider-azuredevops/config/project"
+	"github.com/r3drun3/provider-azuredevops/config/repository"
 )
 
 const (
@@ -36,7 +36,7 @@ func GetProvider() *ujconfig.Provider {
 	for _, configure := range []func(provider *ujconfig.Provider){
 		// add custom config functions
 		project.Configure,
-		git_repository.Configure,
+		repository.Configure,
 	} {
 		configure(pc)
 	}
