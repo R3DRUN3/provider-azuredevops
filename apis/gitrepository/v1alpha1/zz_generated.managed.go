@@ -8,7 +8,7 @@ package v1alpha1
 import xpv1 "github.com/crossplane/crossplane-runtime/apis/common/v1"
 
 // GetCondition of this Repository.
-func (mg *ResourceGitRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+func (mg *Repository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
