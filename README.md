@@ -81,6 +81,18 @@ kind create cluster --config ./k8s-local/kind-config.yml
 ```
 <br/>
 
+Now we can generate our Upjet Provider:  
+```console
+make generate
+```
+<br/>
+
+`Note`: In case the previous command gave you the `panic: cannot run goimports for apis folder: bash: goimports: command not found` error, on macOS you can run:  
+```console
+export PATH="$PATH:$HOME/go/bin" && make generate
+```
+<br/>
+
 Apply Custom Resource Definitions:  
 ```console
 kubectl apply -f package/crds
@@ -123,7 +135,8 @@ Now open a new terminal and apply all the required resources:
 ```console
 kubectl create namespace crossplane-system --dry-run=client -o yaml | kubectl apply -f - \
 && kubectl apply -f examples/providerconfig/ \
-&& kubectl apply -f examples/project/project.yaml
+&& kubectl apply -f examples/project/project.yaml \
+&& kubectl apply -f examples/gitrepository/gitrepository.yaml
 ```
 
 <br/>
@@ -133,6 +146,25 @@ This will create a new azure devops project in your organization:
   ![](images/az-devops-project.png)
 </div>
 
+<br/>
+
+To retrieve the created resources run the following command:  
+```console
+kubectl get managed
+
+NAME                                                                          READY   SYNCED   EXTERNAL-NAME                          AGE
+repository.gitrepository.azuredevops.upbound.io/hello-crossplane-repository   True    False    e03861d4-ce5d-43cc-899e-ed4a4c99d5d0   14m
+
+NAME                                                              READY   SYNCED   EXTERNAL-NAME                          AGE
+project.project.azuredevops.upbound.io/hello-crossplane-project   True    True     7482fede-2c79-402c-b730-5dfafb1b5a24   24m
+```
+
+<br/>
+
+If you want to check resource status use the `describe` command, for example:  
+```console
+k describe repository.gitrepository.azuredevops.upbound.io/hello-crossplane-repository 
+```
 <br/>
 
 If you want to delete the created resource on azure, simply run:  

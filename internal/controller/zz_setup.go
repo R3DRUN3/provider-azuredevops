@@ -9,6 +9,7 @@ import (
 
 	"github.com/upbound/upjet/pkg/controller"
 
+	repository "github.com/r3drun3/provider-azuredevops/internal/controller/gitrepository/repository"
 	project "github.com/r3drun3/provider-azuredevops/internal/controller/project/project"
 	providerconfig "github.com/r3drun3/provider-azuredevops/internal/controller/providerconfig"
 )
@@ -17,6 +18,7 @@ import (
 // the supplied manager.
 func Setup(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
+		repository.Setup,
 		project.Setup,
 		providerconfig.Setup,
 	} {

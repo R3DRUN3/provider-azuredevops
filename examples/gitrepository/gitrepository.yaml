@@ -1,0 +1,13 @@
+apiVersion: gitrepository.azuredevops.upbound.io/v1alpha1
+kind: Repository
+metadata:
+  name: repo-created-with-xplane
+spec:
+  forProvider:
+    defaultBranch: refs/heads/main
+    projectIdRef:
+      name: hello-crossplane-project
+    initialization:
+      - initType: Clean
+  providerConfigRef:
+    name: default

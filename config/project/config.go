@@ -9,4 +9,5 @@ func Configure(p *config.Provider) {
 		// this resource, which would be “azuredevops”
 		r.ShortGroup = "project"
 	})
+
 }
