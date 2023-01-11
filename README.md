@@ -9,7 +9,10 @@
 <br/>
 <br/>
 
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ![CI](https://github.com/r3drun3/provider-azuredevops/actions/workflows/ci.yml/badge.svg)
+
+
 
 <br/>
 
