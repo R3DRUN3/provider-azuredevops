@@ -146,6 +146,14 @@ This will create a new azure devops project in your organization:
   ![](images/az-devops-project.png)
 </div>
 
+
+
+and a repository inside your project:
+<div style="width: 60%; height: 60%">
+
+  ![](images/az-devops-repo.png)
+</div>
+
 <br/>
 
 To retrieve the created resources run the following command:  
