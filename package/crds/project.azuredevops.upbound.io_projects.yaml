@@ -69,16 +69,12 @@ spec:
                     additionalProperties:
                       type: string
                     type: object
-                  name:
-                    type: string
                   versionControl:
                     type: string
                   visibility:
                     type: string
                   workItemTemplate:
                     type: string
-                required:
-                - name
                 type: object
               providerConfigRef:
                 default:

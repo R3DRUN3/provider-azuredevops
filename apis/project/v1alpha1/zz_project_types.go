@@ -27,9 +27,6 @@ type ProjectParameters struct {
 	// +kubebuilder:validation:Optional
 	Features map[string]*string `json:"features,omitempty" tf:"features,omitempty"`
 
-	// +kubebuilder:validation:Required
-	Name *string `json:"name" tf:"name,omitempty"`
-
 	// +kubebuilder:validation:Optional
 	VersionControl *string `json:"versionControl,omitempty" tf:"version_control,omitempty"`
 

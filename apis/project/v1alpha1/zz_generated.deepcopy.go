@@ -120,11 +120,6 @@ func (in *ProjectParameters) DeepCopyInto(out *ProjectParameters) {
 			(*out)[key] = outVal
 		}
 	}
-	if in.Name != nil {
-		in, out := &in.Name, &out.Name
-		*out = new(string)
-		**out = **in
-	}
 	if in.VersionControl != nil {
 		in, out := &in.VersionControl, &out.VersionControl
 		*out = new(string)
