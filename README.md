@@ -1,4 +1,4 @@
-# Crossplane AzureDevops Provider
+# Crossplane Azure Devops Provider
 
 <p float="left">
   <img src="images/crossplane.png" width="300" />
